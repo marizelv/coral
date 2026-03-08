@@ -7,7 +7,7 @@ from PIL import Image
 model = tf.keras.models.load_model("model.h5")
 
 # Load labels
-labels = open("labels.txt").read().splitlines()
+labels = open("label.txt").read().splitlines()
 
 IMG_SIZE = 256
 
@@ -39,3 +39,4 @@ if uploaded_file is not None:
         st.subheader("Top Predictions")
         for i in top_indices:
             st.write(f"{labels[i]} : {preds[i]*100:.2f}%")
+
